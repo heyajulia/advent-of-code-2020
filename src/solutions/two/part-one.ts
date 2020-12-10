@@ -1,4 +1,9 @@
-import Password from "./Password";
+export interface Password {
+  password: string;
+  letter: string;
+  min: number;
+  max: number;
+}
 
 function countLetterInString(letter: string, s: string): number {
   let occurrences = 0;
