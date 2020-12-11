@@ -2,12 +2,16 @@ name: CI
 on:
   push:
     branches: [main]
+    paths:
+      - "./package-*.json"
+      - "./tsconfig.json"
+      - "src/**/*.ts"
   pull_request:
     branches: [main]
-  paths:
-    - "./package-*.json"
-    - "./tsconfig.json"
-    - "src/**/*.ts"
+    paths:
+      - "./package-*.json"
+      - "./tsconfig.json"
+      - "src/**/*.ts"
   workflow_dispatch:
 jobs:
   test:
