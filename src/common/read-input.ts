@@ -5,6 +5,7 @@ import path from "path";
  * Reads the input file for the given day.
  *
  * @param day The day
+ * @param delimiter The delimiter to split the output on.
  * @param transform A function that transforms a line input from its to a
  * runtime representation. If `transform` returns `null`, that particular line
  * is silently dropped.
@@ -16,6 +17,7 @@ import path from "path";
  */
 export default async function readInput<T>(
   day: number,
+  delimiter: string = "\n",
   transform: (line: string) => T | null
 ): Promise<T[]> {
   const fileName = path.join(
@@ -31,7 +33,7 @@ export default async function readInput<T>(
   const text = buf.toString();
   const input = [];
 
-  for (const line of text.split("\n")) {
+  for (const line of text.split(delimiter)) {
     const transformed = transform(line);
 
     if (transformed !== null) {
