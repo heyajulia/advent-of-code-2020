@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "My solutions for Advent of Code 2020",
   "scripts": {
-    "test": "mocha -r ts-node/register src/tests/**/*.ts"
+    "test": "mocha -r ts-node/register src/tests/*.ts"
   },
   "author": "Julia <juliariety@gmail.com>",
   "license": "MIT",
