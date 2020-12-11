@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import partOne from "../../solutions/four/part-one";
-import Passport from "../../solutions/four/Passport";
+import Passport from "../../solutions/four/common";
 
 describe("Day 4", function () {
   describe("Part 1", function () {
