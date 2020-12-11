@@ -1,5 +1,7 @@
 import { expect } from "chai";
-import partOne, { Forest, toSpaceArray } from "../../solutions/three/part-one";
+import { toSpaceArray } from "../../solutions/three/common";
+import { Forest } from "../../solutions/three/Forest";
+import partOne from "../../solutions/three/part-one";
 
 describe("Day 3", function () {
   describe("Part 1", function () {
