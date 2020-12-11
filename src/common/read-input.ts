@@ -1,6 +1,10 @@
 import fs from "fs/promises";
 import path from "path";
 
+export interface ReadInputOptions {
+  delimiter?: string;
+}
+
 /**
  * Reads the input file for the given day.
  *
@@ -17,9 +21,11 @@ import path from "path";
  */
 export default async function readInput<T>(
   day: number,
-  delimiter: string = "\n",
-  transform: (line: string) => T | null
+  transform: (line: string) => T | null,
+  options: ReadInputOptions = {}
 ): Promise<T[]> {
+  const delimiter = options.delimiter ?? "\n";
+
   const fileName = path.join(
     __filename,
     "..",
