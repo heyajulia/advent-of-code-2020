@@ -2,6 +2,9 @@ import fs from "fs/promises";
 import path from "path";
 
 export interface ReadInputOptions {
+  /**
+   * The delimiter to split the file on. `\n` by default.
+   */
   delimiter?: string;
 }
 
@@ -9,10 +12,10 @@ export interface ReadInputOptions {
  * Reads the input file for the given day.
  *
  * @param day The day
- * @param delimiter The delimiter to split the output on.
  * @param transform A function that transforms a line input from its to a
  * runtime representation. If `transform` returns `null`, that particular line
  * is silently dropped.
+ * @param options Options. See `ReadInputOptions` for details.
  *
  * @example
  *
